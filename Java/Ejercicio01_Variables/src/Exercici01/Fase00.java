@@ -1,11 +1,19 @@
 package Exercici01;
 
 public abstract class Fase00 {
-	protected String nom, cognom1, cognom2;
-	protected int dia, mes, any;
 	
-	protected Fase00() {
+	private String nom, cognom1, cognom2;
+	private int dia, mes, any;
+	
+	
+	public Fase00(String nom, String cognom1, String cognom2, int dia, int mes, int any) {
 		super();
+		this.nom = nom;
+		this.cognom1 = cognom1;
+		this.cognom2 = cognom2;
+		this.dia = dia;
+		this.mes = mes;
+		this.any = any;
 	}
 
 	protected String getNom() {

@@ -4,15 +4,15 @@ public class Exercici01_App {
 
 	public static void main(String[] args) {
 	
-		Fase04 person = new Fase04();
+		Person person01 = new Person("Fauno", "Guazina", "", 20, 04, 2019);
 		
-		person.printFase01();
+		person01.printFase01();
 		
-		person.printFase02();
+		person01.printFase02();
 		
-		person.printFase03();
+		person01.printFase03();
 		
-		person.printFase04();
+		person01.printFase04();
 		
 		
 		

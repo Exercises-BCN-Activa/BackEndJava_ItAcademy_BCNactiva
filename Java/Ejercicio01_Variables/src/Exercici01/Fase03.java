@@ -1,7 +1,16 @@
 package Exercici01;
 
 public class Fase03 extends Fase02 {
+	
+	
 	protected boolean traspas_verify;
+	
+	
+	
+	public Fase03(String nom, String cognom1, String cognom2, int dia, int mes, int any) {
+		super(nom, cognom1, cognom2, dia, mes, any);
+		// TODO Auto-generated constructor stub
+	}
 	
 	protected boolean isTraspas_verify() {
 		return traspas_verify;
