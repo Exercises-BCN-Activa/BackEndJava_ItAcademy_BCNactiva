@@ -8,7 +8,6 @@ public class Fase02 extends Fase01 {
 	
 	public Fase02(String nom, String cognom1, String cognom2, int dia, int mes, int any) {
 		super(nom, cognom1, cognom2, dia, mes, any);
-		// TODO Auto-generated constructor stub
 	}
 
 
