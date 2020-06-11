@@ -30,10 +30,16 @@ let divFase = document.querySelector('div#fase')
 
 // FUNCTIONS
 function fase01() {
-    let nom = txtnom.value
-    let cognom1 = txtcogn1.value
-    let cognom2 = txtcogn2.value
-    let nom_complet = nom + " " + cognom1 + " " + cognom2
+    let nom = txtnom.value.trim()
+    let Nom = nom.charAt(0).toUpperCase() + nom.slice(1).toLowerCase()
+    let cognom1 = txtcogn1.value.trim()
+    let Cognom1 = cognom1.charAt(0).toUpperCase() + cognom1.slice(1).toLowerCase()
+    let cognom2 = txtcogn2.value.trim()
+    let Cognom2 = cognom2.charAt(0).toUpperCase() + cognom2.slice(1).toLowerCase()
+    let nom_complet = Nom + " " + Cognom1
+    if (Cognom2.length != 0) {
+        nom_complet += Cognom2
+    }
     let dia = Number(selDia.value)
     let mes = Number(selMes.value)
     let any = Number(selAny.value)
@@ -95,10 +101,16 @@ function fase03() {
 }
 
 function fase04() {
-    let nom = txtnom.value
-    let cognom1 = txtcogn1.value
-    let cognom2 = txtcogn2.value
-    let nom_complet = nom + " " + cognom1 + " " + cognom2
+    let nom = txtnom.value.trim()
+    let Nom = nom.charAt(0).toUpperCase() + nom.slice(1).toLowerCase()
+    let cognom1 = txtcogn1.value.trim()
+    let Cognom1 = cognom1.charAt(0).toUpperCase() + cognom1.slice(1).toLowerCase()
+    let cognom2 = txtcogn2.value.trim()
+    let Cognom2 = cognom2.charAt(0).toUpperCase() + cognom2.slice(1).toLowerCase()
+    let nom_complet = Nom + " " + Cognom1
+    if (Cognom2.length != 0) {
+        nom_complet += Cognom2
+    }
     let dia = Number(selDia.value)
     let mes = Number(selMes.value)
     let any = Number(selAny.value)
