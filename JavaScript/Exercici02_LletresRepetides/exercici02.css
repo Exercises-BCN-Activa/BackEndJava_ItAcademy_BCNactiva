@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(131, 42, 42);
+    font: normal 12pt verdana;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    text-align: center;
+    background-color: rgb(247, 212, 57);
+    border-radius: 50px;
+    padding: 15px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.356);
+}
+
+div#fase {
+    font-size: 9pt;
+    text-align: left;
+    padding: 15px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+input.text {
+    text-align: center;
+    width: 250px;
+    margin: 2px;
+    
+}
+
+input#txtnom {
+    margin-top: 10px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    padding: 15px;
+}
