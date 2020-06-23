@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(213, 246, 248);
+    font: normal 12pt trebuchet;
+}
+
+header {
+    color: rgb(56, 75, 51);
+    text-align: center;
+}
+
+section {
+    text-align: center;
+    background-color: rgb(168, 231, 184);
+    border-radius: 20px;
+    padding: 15px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.356);
+}
+
+input.city {
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input.btn {
+    margin: 3px;
+    padding: 5px;
+    
+    border-radius: 15px;
+    text-align: center;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    padding: 15px;
+}
