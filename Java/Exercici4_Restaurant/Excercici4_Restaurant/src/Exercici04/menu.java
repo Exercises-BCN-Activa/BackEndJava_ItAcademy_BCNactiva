@@ -64,12 +64,25 @@ public class menu {
 	 * @param preu (integer dish price, without comma or zero decimals)
 	 */
 	public static void setMenuPlatsPreus(String plat, int preu) {
-		for (int posicio=0; posicio<5; posicio++) {
-			if (menuPlats[posicio] == null) {
-				menuPlats[posicio] = plat;
-				menuPreus[posicio] = preu;
-				break;
-			}
+		if (getMenuPlats()[0] == null) {
+			setMenuPlatsPreus(1, plat, preu);
+		}
+		else if (getMenuPlats()[1] == null) {
+			setMenuPlatsPreus(2, plat, preu);
+		}
+		else if (getMenuPlats()[2] == null) {
+			setMenuPlatsPreus(3, plat, preu);
+		}
+		else if (getMenuPlats()[3] == null) {
+			setMenuPlatsPreus(4, plat, preu);
+		}
+		else if (getMenuPlats()[4] == null) {
+			setMenuPlatsPreus(5, plat, preu);
+		}
+		else {
+			System.out.print("ERRO! El menú està ple" + 
+			"utilitzeu el mètode que sobreposa una posició" + 
+			"setMenuPlatsPreus(int posicio, String plat, int preu)");
 		}
 	}
 

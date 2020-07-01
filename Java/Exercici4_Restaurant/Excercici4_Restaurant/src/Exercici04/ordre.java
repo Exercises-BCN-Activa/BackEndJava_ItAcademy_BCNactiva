@@ -82,8 +82,8 @@ public class ordre {
 	 * AND CREATES SYSTEMATIC LOOPING OF ORDERS BY WHILE
 	 */
 	public void setOrdres() {
-		String pregunta;
-		while (true) {
+		String pregunta = "";
+		while (pregunta.isEmpty() || !"n".equalsIgnoreCase(String.valueOf(pregunta.trim().charAt(0)))) {
 			setPlat();
 			verifyPlat();
 			ordrePlat();
@@ -91,16 +91,7 @@ public class ordre {
 			System.out.print("\n"+"Vol seguir demanant [si/no]: ");
 			
 			// asks if you want to keep ordering, eliminating unnecessary spaces
-			pregunta = menjar.nextLine().trim();
-			
-			// even if the user doesn’t type anything the program understands how yes
-			if (pregunta.isEmpty()) {continue;} 
-			
-			// BREAK condition only if the answer starts with the letter N, regardless of the case
-			else if("n".equalsIgnoreCase(String.valueOf(pregunta.trim().charAt(0)))) {
-				System.out.println("-------______-------\n");
-				break;
-			}	
+			pregunta = menjar.nextLine().trim();	
 		} 
 	}
 	

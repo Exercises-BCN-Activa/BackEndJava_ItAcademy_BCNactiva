@@ -32,13 +32,18 @@ public class client {
 	 * prints the customer's order list
 	 */
 	public void getPedido() {
-		System.out.println("El client " + getNom() + " va ordenar els següents plats:");
-		int number = 1;
-		for (String iten:pedido.getOrdres()) {
-			System.out.println(number + " - " + iten);
-			number++;
+		if (pedido.getOrdres().size() == 0) {
+			System.out.println("el client " + getNom() + " no va demanar res");
 		}
-		System.out.println("-------______-------\n");
+		else {
+			System.out.println("El client " + getNom() + " va ordenar els següents plats:");
+			int number = 1;
+			for (String iten:pedido.getOrdres()) {
+				System.out.println(number + " - " + iten);
+				number++;
+			}
+			System.out.println("-------______-------\n");
+		}
 		
 	}
 
@@ -48,10 +53,15 @@ public class client {
 	 */
 	public void getPressupost() {
 		setPressupost();
-		System.out.println("L’import total de la taula " + getTaula() + " va ser:");
-		System.out.printf("%s%d%s\n",">>>>>> € ",pressupost.getTotal(),",00 <<<<<<");
-		pressupost.quinsBitllets();
-		System.out.println("-------______-------\n");
+		if (pressupost.getTotal() == 0) {
+			System.out.println("la taula " + getTaula() + " no ha de pagar res");
+		}
+		else {
+			System.out.println("L’import total de la taula " + getTaula() + " va ser:");
+			System.out.printf("%s%d%s\n",">>>>>> € ",pressupost.getTotal(),",00 <<<<<<");
+			pressupost.quinsBitllets();
+			System.out.println("-------______-------\n");
+		}
 	}
 
 	/**
