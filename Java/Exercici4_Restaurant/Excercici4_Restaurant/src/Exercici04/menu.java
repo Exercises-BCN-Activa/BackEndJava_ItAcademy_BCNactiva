@@ -7,6 +7,7 @@ public class menu {
 	private static int [] menuPreus = new int[5];
 	
 	
+	
 // 6 METHODS (all Public) of interaction with the MENU class -> GETTERS, SETTERS and PRINT(similar toString)
 	
 // METHOD[1/6] - GETTER ARRAY OF MEALS (STRING)
@@ -36,15 +37,23 @@ public class menu {
 	}
 	
 // METHOD[5/6] - THIRD SETTER OF TWO ARRAYS (MEALS & PRICES) -> filling menu without specific position
-	// The buckle FOR find a NULL position and insert the meals and price.
 	public static void setMenuPlatsPreus(String plat, int preu) {
-		for (int posicio=0; posicio<5; posicio++) {
-			if (menuPlats[posicio] == null) {
-				menuPlats[posicio] = plat;
-				menuPreus[posicio] = preu;
-				break;
-			}
+		if (getMenuPlats()[0] == null) {
+			setMenuPlatsPreus(1, plat, preu);
 		}
+		else if (getMenuPlats()[1] == null) {
+			setMenuPlatsPreus(2, plat, preu);
+		}
+		else if (getMenuPlats()[2] == null) {
+			setMenuPlatsPreus(3, plat, preu);
+		}
+		else if (getMenuPlats()[3] == null) {
+			setMenuPlatsPreus(4, plat, preu);
+		}
+		else {
+			setMenuPlatsPreus(5, plat, preu);
+		}
+		
 	}
 
 // METHOD[6/6] - PRINT(similar toString) with tabulation to display in console

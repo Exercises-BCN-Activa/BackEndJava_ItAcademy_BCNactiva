@@ -54,20 +54,14 @@ public class ordre {
 // METHOD[5/5] - CONGREGES THE AUXILIARY METHODS OF INPUT AND VALIDATION
 	// AND CREATES SYSTEMATIC LOOPING OF ORDERS BY WHILE
 	public static void setOrdres() {
-		String pregunta;
-		while (true) {
+		String pregunta = "";
+		while (pregunta.isEmpty() || !"n".equalsIgnoreCase(String.valueOf(pregunta.trim().charAt(0))) ) {
 			setPlat();
 			verifyPlat();
 			ordrePlat();
 			
 			System.out.print("\n"+"Vol seguir demanant [si/no]: ");
 			pregunta = menjar.nextLine().trim(); // asks if you want to keep ordering, eliminating unnecessary spaces
-			if (pregunta.isEmpty()) {continue;} // even if the user doesn’t type anything the program understands how yes
-			// BREAK condition only if the answer starts with the letter N, regardless of the case
-			else if("n".equalsIgnoreCase(String.valueOf(pregunta.trim().charAt(0)))) {
-				System.out.println("-------______-------");
-				break;
-			}	
 		} 
 	}
 	
