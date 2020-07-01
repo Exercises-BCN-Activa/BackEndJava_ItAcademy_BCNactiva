@@ -15,25 +15,21 @@ public class Restaurant_App {
 		// SHOW THE MENU IN CONSOLE
 		menu.printMenu();
 		
-		// TRIGGER ORDERING METHOD
-		ordre.setOrdres();
+		// INSTANCES NEW CUSTOMERS AND GIVES THEM NAME AND TABLE
+		client cliente1 = new client("Fauno", 12);
+		client cliente2 = new client("Jose", 05);
 		
-		// CALCULATION ORDERS TOTAL VALUE
-		caixer.calculaOrdre();
+		// TRIGGERS ORDERS METHOD
+		cliente1.setPedido();
+		cliente2.setPedido();
 		
-		// DISPLAY ORDERS MADE
-		System.out.println("S'han ordenat els plats següents:");
-		System.out.println(ordre.getOrdres());
+		// DISPLAY EACH CUSTOMER'S ORDERS, THEN YOUR DEBTS
+		cliente1.getPedido();
+		cliente1.getPressupost();
+		cliente2.getPedido();
+		cliente2.getPressupost();
 		
-		// VISUAL SEPARATOR IN CONSOLE 
-		System.out.println("-------______-------");
 		
-		// DISPLAY TOTAL ORDERS VALUE
-		System.out.println("L’import total de la comanda va ser:");
-		System.out.printf("%s%d%s\n",">>>>>> € ",caixer.getTotal(),",00 <<<<<<");
 		
-		// DISPLAY THE AMOUT OF NOTES FOR EACH EURO VALUE
-		caixer.quinsBitllets();
-
 	}
 }
