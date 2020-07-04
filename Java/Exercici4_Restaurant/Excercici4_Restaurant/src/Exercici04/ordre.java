@@ -76,6 +76,7 @@ public class ordre {
 		else {System.out.println("\n"+"ERROR! el menjar demanat no existeix");}
 	}
 	
+
 	/**
 	 * METHOD[5/5] > 
 	 * CONGREGES THE AUXILIARY METHODS 2,3,4/5 OF INPUT AND VALIDATION
@@ -92,7 +93,7 @@ public class ordre {
 			
 			// asks if you want to keep ordering, eliminating unnecessary spaces
 			pregunta = menjar.nextLine().trim();	
+
 		} 
 	}
-	
 }

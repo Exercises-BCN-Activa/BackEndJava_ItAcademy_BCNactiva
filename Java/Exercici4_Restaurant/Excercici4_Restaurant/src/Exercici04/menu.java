@@ -9,6 +9,8 @@ public class menu {
 	
 // 6 METHODS (all Public) of interaction with the MENU class
 	//-> GETTERS, SETTERS and PRINT(similar toString)
+
+
 	
 	/**
 	 * METHOD[1/6] >
@@ -55,6 +57,7 @@ public class menu {
 		menuPreus[posicio] = preu;
 	}
 	
+  
 	/**
 	 * METHOD[5/6] >
 	 * THIRD SETTER OF TWO ARRAYS (MEALS & PRICES) >
@@ -82,8 +85,7 @@ public class menu {
 		else {
 			System.out.print("ERRO! El menú està ple" + 
 			"utilitzeu el mètode que sobreposa una posició" + 
-			"setMenuPlatsPreus(int posicio, String plat, int preu)");
-		}
+			"setMenuPlatsPreus(int posicio, String plat, int preu)");		
 	}
 
 	/**
