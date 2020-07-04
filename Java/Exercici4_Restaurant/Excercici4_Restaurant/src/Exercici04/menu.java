@@ -1,10 +1,15 @@
 package Exercici04;
 
+import java.util.Scanner;
+
 public class menu {
 
 // 2 Arrays of 5 positions for storing meals (String) and prices (int)
 	private static String [] menuPlats = new String[5];
 	private static int [] menuPreus = new int[5];
+	
+// SCANNER method declaration to capture inputs
+	private static Scanner menjar = new Scanner(System.in);
 	
 	
 // 6 METHODS (all Public) of interaction with the MENU class
@@ -62,7 +67,7 @@ public class menu {
 	 * METHOD[5/6] >
 	 * THIRD SETTER OF TWO ARRAYS (MEALS & PRICES) >
 	 * filling menu without specific position.
-	 * The buckle FOR find a NULL position and insert the meals and price.
+	 * conditional IF searches for null position or asks which position to replace
 	 * @param plat (string dish name, between double quotes "name")
 	 * @param preu (integer dish price, without comma or zero decimals)
 	 */
@@ -83,9 +88,20 @@ public class menu {
 			setMenuPlatsPreus(5, plat, preu);
 		}
 		else {
-			System.out.print("ERRO! El menú està ple" + 
-			"utilitzeu el mètode que sobreposa una posició" + 
-			"setMenuPlatsPreus(int posicio, String plat, int preu)");		
+			System.out.print("ERRO! El menú està ple! Escolliu una posició "
+					+ "\nde l’1 al 5 per substituir-lo del menú: ");
+
+			//replace method with regex that replaces everything other than 1 to 5 for void
+			String pos = menjar.nextLine().trim().replaceAll("[^1-5]", "");
+
+			// menu position validation WHILLE buckle
+			while (pos.isEmpty() || pos.matches("[^1-5]")) {
+				System.out.print("ERRO! entrar posició vàlida (1 a 5): ");
+				pos = menjar.nextLine().trim().replaceAll("[^1-5]", "");
+			} 
+			Integer posicio = Integer.parseUnsignedInt(String.valueOf(pos.charAt(0)));
+			setMenuPlatsPreus(posicio, plat, preu);
+		}
 	}
 
 	/**
