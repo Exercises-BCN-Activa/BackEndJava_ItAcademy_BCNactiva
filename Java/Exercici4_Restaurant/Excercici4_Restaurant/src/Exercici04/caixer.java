@@ -98,7 +98,7 @@ public class caixer {
 		int resta = getTotal();
 		int bitllet = 500;
 		int quantitatBitllet = 0;
-		while (resta > 0) {
+		while (bitllet > 0) {
 			// condition that reduces the value of each note from the total
 			// and calculates the amount of each one
 			if (resta >= bitllet) {
@@ -117,6 +117,7 @@ public class caixer {
 				else if (bitllet == 50) {bitllet = 20;}
 				else if (bitllet == 20) {bitllet = 10;}
 				else if (bitllet == 10) {bitllet = 5;}
+				else if (bitllet == 5) {bitllet = 0;}
 			}
 		}
 	}
