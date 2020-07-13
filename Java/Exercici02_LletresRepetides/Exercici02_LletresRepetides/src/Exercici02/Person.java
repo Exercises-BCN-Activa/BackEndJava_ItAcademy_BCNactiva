@@ -4,7 +4,7 @@ package Exercici02;
 
 public final class Person extends Fases {
 	
-// Construction methods from the super class (parent)
+// Construction methods from the super class
 
 	public Person() {
 		super();
