@@ -2,7 +2,6 @@ package Exercici02;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 // Abstract class to not be able to instantiate
@@ -65,24 +64,6 @@ public abstract class Fases {
 		
 	}
 
-	
-
-// AUXILIARY METHOD FOR FASES 2,3,4 METHODS OF EXERCISE 02	
-
-	/**
-	 * auxiliary method that turns string into list of characters.
-	 * @param term - string variable
-	 * @return - List Character
-	 */
-	private List<Character> toListChar(String term) {
-		List<Character> listCharFromString = new ArrayList<Character>();
-		for (char lletra:term.toCharArray()) {
-			listCharFromString.add(lletra);
-		}
-		
-		return listCharFromString;
-	}
-	
 
 // FASES METHODS OF EXERCISE 02
 	
@@ -114,42 +95,37 @@ public abstract class Fases {
 
 	/**
 	 * Method that evaluates whether each character is a consonant, vowel or something else.
-	 * Uses buckle FOR to scan variable fullname converted to list using auxiliary method
+	 * Uses buckle FOR to scan variable fullname,
 	 * then uses a sequence of IF conditionals to check what each character is,
 	 * to check each char uses an array of list-converted vowels.
 	 * Print at the beginning to indicate method header and at the end for line skip.
 	 */
 	public void printFase02() {
-		System.out.println("---------- FASE 02 ----------");
+		System.out.println("---------- FASE 02 ----------"); 
 		
-//		list of characters for checking the letters of the names
-		Character [] vocal = 
-			{'A','À','Á','Â','Ã','Ä','È','É','Ê','Ẽ','Ë','Ì','Í','Î','Ĩ',
-				'Ò','Ó','Ô','Õ','Ö','Ù','Ú','Û','Ũ','Ü','E','I','O','U'};
-		List <Character> vocals = Arrays.asList(vocal); 
-		
-//		buckle for to scan the full name
-		for (Character element:toListChar(this.getFullnom())) {
+//		buckle for to scan the full name		
+		for (int l=0; l<this.getFullnom().length(); l++) {
+			Character lletra = this.getFullnom().toUpperCase().charAt(l); 
 
 //			if a letter enters this condition
-			if (Character.isAlphabetic(element)) {
+			if (Character.isAlphabetic(lletra)) {
 				
 //				if a vowel falls in this condition
-				if (vocals.contains(Character.toUpperCase(element))) {
-					System.out.println(element + " = VOCAL");
+				if (Character.toString(lletra).matches("[AÀÁÂÃÄEÈÉÊẼËIÌÍÎĨOÒÓÔÕÖUÙÚÛŨÜ]")) {
+					System.out.println(lletra + " = VOCAL");
 					
 //				if it is a consonant it falls into that condition
 				} else {
-					System.out.println(element + " = CONSONTANT");
+					System.out.println(lletra + " = CONSONTANT");
 				}
 
 //			if a number falls in this condition	
-			} else if (Character.isDigit(element)) {
-				System.out.println(element + " - Els noms de persones no contenen números!");
+			} else if (Character.isDigit(lletra)) {
+				System.out.println(lletra + " - Els noms de persones no contenen números!");
 				
 //			if it is anything other than letter or number	
 			} else {
-				System.out.println(element + " - Espai o caràcter especial!");
+				System.out.println(lletra + " - Espai o caràcter especial!");
 				}
 			
 		}
@@ -160,8 +136,8 @@ public abstract class Fases {
 	/**
 	 * method that counts how many times each character of the full name appears.
 	 * First creates a hashmap to register each character as a key
-	 * and its number of appearances as a value, them Uses buckle FOR to scan the
-	 * variable fullname converted to list using auxiliary method.
+	 * and its number of appearances as a value,
+	 * them Uses buckle FOR to scan the variable fullname.
 	 * Use conditional IF to see if the key already exists 
 	 * and update its value, or insert new key / value
 	 * Print at the beginning to indicate method header and at the end for line skip.
@@ -172,26 +148,26 @@ public abstract class Fases {
 //		hashmap creation
 		HashMap<Character, Integer> lletrasVegadas = new HashMap<Character, Integer>();
 		
-//		FOR EACH to scan full name: char by char
-		for (Character lletra : toListChar(this.getFullnom())) {
+//		FOR to scan full name: char by char
+		for (int l=0; l<this.getFullnom().length(); l++) {
 			
 			//creation of variable with uppercase char to facilitate coding
-			Character l = Character.toUpperCase(lletra);
+			Character lletra = Character.toUpperCase(this.getFullnom().charAt(l));
 			
 //			conditional that evaluates if the char already exists in the hashmap and updates its value
-			if (lletrasVegadas.containsKey(l)) {
-				lletrasVegadas.put(l, (lletrasVegadas.get(l) + 1));
+			if (lletrasVegadas.containsKey(lletra)) {
+				lletrasVegadas.put(lletra, (lletrasVegadas.get(lletra) + 1));
 				
 //			conditional creates key from char if it is not empty space	
 			} else {
-				if (l != ' ') {
-					lletrasVegadas.put(l, 1);	
+				if (lletra != ' ') {
+					lletrasVegadas.put(lletra, 1);	
 				}	
 			}
 		}
 //		shows letters and their repetition values on the console
 		System.out.println(lletrasVegadas);
-		System.out.println("\n");		
+		System.out.println("\n");
 	}
 	
 
@@ -207,10 +183,10 @@ public abstract class Fases {
 //		character list creation
 		List<Character> FullName = new ArrayList<Character>();
 		
-//		filling in the list using method .addAll(),
-//		using auxiliary method parameter that converts string to list
-		FullName.addAll(toListChar(this.getFullnom()));
-		
+//		filling the list using method .add() char by char using a FOR
+		for (int l=0; l<this.getFullnom().length(); l++) {
+			FullName.add(this.getFullnom().charAt(l));
+		}
 		
 		System.out.println(FullName);		
 	}
@@ -222,7 +198,7 @@ public abstract class Fases {
 	private String cognom = "Cognom";
 	private String nom = "Nom";
 		
-//	variable containing first and last name together
+//	variable containing first and last name together separated by space
 	private String fullnom = this.getFullnom();
 	
 }
